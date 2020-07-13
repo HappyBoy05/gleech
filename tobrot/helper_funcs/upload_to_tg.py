@@ -89,7 +89,7 @@ async def upload_to_tg(
             LOGGER.info("TODO")
             d_f_s = humanbytes(os.path.getsize(local_file_name))
             i_m_s_g = await message.reply_text(
-                "Telegram does not support uploading this file.\n"
+                "Telegram Does Not Support Uploading This File.\n"
                 f"Detected File Size: {d_f_s}\n"
                 "\n Trying to split the files"
             )
@@ -101,7 +101,7 @@ async def upload_to_tg(
             ba_se_file_name = os.path.basename(local_file_name)
             await i_m_s_g.edit_text(
                 f"Detected File Size: {d_f_s} 😡\n"
-                f"<code>{ba_se_file_name}</code> splitted into {number_of_files} files.\n"
+                f"<code>{ba_se_file_name}</code> Splitted Into {number_of_files} files.\n"
                 "trying to upload to Telegram, now ..."
             )
             for le_file in totlaa_sleif:
@@ -128,7 +128,7 @@ async def upload_to_tg(
 
 async def upload_to_gdrive(file_upload, message):
     await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-    await message.edit_text("🔊 Now Uploading to ☁️ cloud...")
+    await message.edit_text("🤯 Now Uploading To Gdrive...")
     subprocess.Popen(('touch', 'rclone.conf'), stdout = subprocess.PIPE)
     with open('rclone.conf', 'a', newline="\n") as fole:
         fole.write("[DRIVE]\n")
@@ -155,15 +155,15 @@ async def upload_to_gdrive(file_upload, message):
         #tam_link = requests.utils.requote_uri(indexurl)
         #s_tr = '-'*40
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="☁️ FileCloudUrl ☁️", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="GDrive Link", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}"
             tam_link = requests.utils.requote_uri(indexurl)
             print(tam_link)
-            button.append([pyrogram.InlineKeyboardButton(text="ℹ️ FileIndexUrl ℹ️", url=f"{tam_link}")])
+            button.append([pyrogram.InlineKeyboardButton(text="Shareable Link", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await message.edit_text(f"🤖: {file_upload} has been Uploaded successfully to your cloud 🤒", reply_markup=button_markup)
+        await message.edit_text(f"🤖: {file_upload} Has Been Uploaded Successfully 🤒", reply_markup=button_markup)
         #await message.edit_text(f"""🤖: {file_upload} has been Uploaded successfully to your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
         os.remove(file_upload)
     else:
@@ -190,15 +190,15 @@ async def upload_to_gdrive(file_upload, message):
         #tam_link = requests.utils.requote_uri(indexurl)
         #print(tam_link)
         button = []
-        button.append([pyrogram.InlineKeyboardButton(text="☁️ FolderCloudUrl ☁️", url=f"{gau_link}")])
+        button.append([pyrogram.InlineKeyboardButton(text="Gdrive Link", url=f"{gau_link}")])
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{file_upload}/"
             tam_link = requests.utils.requote_uri(indexurl)
             print(tam_link)
-            button.append([pyrogram.InlineKeyboardButton(text="ℹ️ FolderIndexUrl ℹ️", url=f"{tam_link}")])
+            button.append([pyrogram.InlineKeyboardButton(text="Shareable Link", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await message.edit_text(f"🤖: Folder has been Uploaded successfully to {tt} in your cloud 🤒", reply_markup=button_markup)
+        await message.edit_text(f"🤖: Folder Has Been Uploaded Successfully  🤒", reply_markup=button_markup)
         #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         #await message.edit_text(f"""🤖: Folder has been Uploaded successfully to {tt} in your cloud 🤒\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
         shutil.rmtree(file_upload)
@@ -395,7 +395,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, e
                     reply_to_message_id=message.reply_to_message.message_id,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        "trying to upload",
+                        "Trying To Upload",
                         message_for_progress_display,
                         start_time
                     )
