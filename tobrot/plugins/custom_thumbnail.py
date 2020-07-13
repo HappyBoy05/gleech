@@ -1,4 +1,4 @@
-"""ThumbNail utilities, © @AnyDLBot"""
+"""ThumbNail utilities"""
 
 
 import os
