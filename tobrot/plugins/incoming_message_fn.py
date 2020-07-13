@@ -61,7 +61,7 @@ async def incoming_message_f(client, message):
     LOGGER.info(dl_url)
     LOGGER.info(cf_name)
     if dl_url is not None:
-        await i_m_sefg.edit_text("extracting links")
+        await i_m_sefg.edit_text("Extracting links")
         # start the aria2c daemon
         aria_i_p = await aria_start()
         LOGGER.info(aria_i_p)
@@ -75,7 +75,7 @@ async def incoming_message_f(client, message):
         # create download directory, if not exist
         if not os.path.isdir(new_download_location):
             os.makedirs(new_download_location)
-        await i_m_sefg.edit_text("trying to download")
+        await i_m_sefg.edit_text("Trying to download")
         # try to download the "link"
         sagtus, err_message = await call_apropriate_function(
             aria_i_p,
@@ -93,7 +93,7 @@ async def incoming_message_f(client, message):
             await i_m_sefg.edit_text(err_message)
     else:
         await i_m_sefg.edit_text(
-            "Sorry,There Is An Error,Do Steps Properly"
+            "Sorry,There Is Error Use Proper Command"
             )
 #
 async def incoming_gdrive_message_f(client, message):
@@ -131,7 +131,7 @@ async def incoming_gdrive_message_f(client, message):
         # create download directory, if not exist
         if not os.path.isdir(new_download_location):
             os.makedirs(new_download_location)
-        await i_m_sefg.edit_text("trying to download")
+        await i_m_sefg.edit_text("Trying to download")
         # try to download the "link"
         await call_apropriate_function_g(
             aria_i_p,
@@ -146,7 +146,7 @@ async def incoming_gdrive_message_f(client, message):
         )
     else:
         await i_m_sefg.edit_text(
-            "Sorry,There Is An Error,Do Steps Properly"
+            "Sorry,There Is ErrorUse Proper Command"
             )
 
 
@@ -191,5 +191,5 @@ async def incoming_youtube_dl_f(client, message):
             )
     else:
         await i_m_sefg.edit_text(
-            "Sorry,There Is An Error,Do Steps Properly"
+            "Sorry,There Is Error Use Proper Command"
              )
