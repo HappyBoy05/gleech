@@ -81,14 +81,14 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
             options=options
         )
     except Exception as e:
-        return False, "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help"
+        return False, "**FAILED** \n" + str(e) + " \nPlease Do not Send SLOW links. Read Pinned Message"
     else:
         return True, "" + download.gid + ""
 
 
 def add_torrent(aria_instance, torrent_file_path):
     if torrent_file_path is None:
-        return False, "**FAILED** \n" + str(e) + " \nsomething wrongings when trying to add <u>TORRENT</u> file"
+        return False, "**FAILED** \n" + str(e) + " \nSomething Wrong When Trying To Add <u>TORRENT</u> file"
     if os.path.exists(torrent_file_path):
         # Add Torrent Into Queue
         try:
@@ -99,11 +99,11 @@ def add_torrent(aria_instance, torrent_file_path):
                 position=None
             )
         except Exception as e:
-            return False, "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help"
+            return False, "**FAILED** \n" + str(e) + " \nPlease Do Not Send SLOW links. Read Pinned Message"
         else:
             return True, "" + download.gid + ""
     else:
-        return False, "**FAILED** \n" + str(e) + " \nPlease try other sources to get workable link"
+        return False, "**FAILED** \n" + str(e) + " \nPlease Try Other Sources To Get Workable link"
 
 
 def add_url(aria_instance, text_url, c_file_name):
@@ -120,7 +120,7 @@ def add_url(aria_instance, text_url, c_file_name):
             options=options
         )
     except Exception as e:
-        return False, "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help"
+        return False, "**FAILED** \n" + str(e) + " \nPlease Do Not Send SLOW links. Read Pinned Message"
     else:
         return True, "" + download.gid + ""
 
@@ -165,7 +165,7 @@ async def call_apropriate_function(
                 None
             )
         else:
-            return False, "can't get metadata \n\n#stopped"
+            return False, "Can't Get Metadata \n\n#stopped #HB4All"
     await asyncio.sleep(1)
     file = aria_instance.get_download(err_message)
     to_upload_file = file.name
@@ -231,9 +231,9 @@ async def call_apropriate_function(
     if message_to_send != "":
         mention_req_user = f"<a href='tg://user?id={user_id}'>Your Requested Files</a>\n\n"
         message_to_send = mention_req_user + message_to_send
-        message_to_send = message_to_send + "\n\n" + "#uploads"
+        message_to_send = message_to_send + "\n\n" + "#uploads @HB4All"
     else:
-        message_to_send = "<i>FAILED</i> to upload files. 😞😞"
+        message_to_send = "<i>FAILED</i> To Upload files. 😞😞"
     await sent_message_to_update_tg_p.reply_to_message.reply_text(
         text=message_to_send,
         quote=True,
@@ -282,7 +282,7 @@ async def call_apropriate_function_g(
                 None
             )
         else:
-            return False, "can't get metadata \n\n#stopped"
+            return False, "Can't Get Metadata \n\n#stopped #HB4All"
     await asyncio.sleep(1)
     file = aria_instance.get_download(err_message)
     to_upload_file = file.name
@@ -393,7 +393,7 @@ async def call_apropriate_function_t(
     if message_to_send != "":
         mention_req_user = f"<a href='tg://user?id={user_id}'>Your Requested Files</a>\n\n"
         message_to_send = mention_req_user + message_to_send
-        message_to_send = message_to_send + "\n\n" + "#uploads"
+        message_to_send = message_to_send + "\n\n" + "#uploads #HB4All"
     else:
         message_to_send = "<i>FAILED</i> to upload files. 😞😞"
     await sent_message_to_update_tg_p.reply_to_message.reply_text(
